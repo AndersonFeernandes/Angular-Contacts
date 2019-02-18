@@ -1,0 +1,46 @@
+mat-card {
+  margin: 1.5em;
+  flex-grow: 1;
+  flex: 1 1 25%;
+
+  &-title {
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+  &-content {
+    padding: 3em;
+  }
+
+  &-actions {
+    text-align: right;
+  }
+}
+
+.card-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover > button {
+    opacity: 0.3;
+  }
+
+  & > button {
+    font-size: 3em;
+    border: 0;
+    background: transparent;
+    height: 2em;
+    opacity: 0.5;
+    width: 2em;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+mat-form-field {
+  width: 100%;
+}

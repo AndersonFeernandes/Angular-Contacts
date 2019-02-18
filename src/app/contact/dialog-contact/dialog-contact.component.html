@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>{{ dialogTitle }}</h1>
+<form
+  #contactForm="ngForm"
+  novalidate
+  (ngSubmit)="contactForm.form.valid && save($event)"
+>
+  <mat-dialog-content>
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="contact.name" required name="name" />
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone</mat-label>
+      <input matInput [(ngModel)]="contact.phone" name="phone" />
+      <mat-icon matSuffix> perm_phone_msg </mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="contact.email" email name="email" />
+      <mat-icon matSuffix>
+        alternate_email
+      </mat-icon>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-button color="primary" (click)="close()">Cancel</button>
+    <button
+      mat-button
+      color="warn"
+      [disabled]="!contactForm.form.valid"
+      (click)="save()"
+    >
+      Save
+    </button>
+  </mat-dialog-actions>
+</form>
